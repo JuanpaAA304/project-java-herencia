@@ -1,19 +1,50 @@
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+# 🚗 Proyecto: Componentes Vehiculares – Herencia en Java
 
-## Folder Structure
+Este proyecto demuestra el uso del **principio de herencia** en Java a través de una jerarquía de clases relacionadas con componentes vehiculares. Cada clase especializada hereda de una clase base (`ComponenteVehicular`) y añade comportamientos particulares.
 
-The workspace contains two folders by default, where:
+## 🧩 Jerarquía de Clases
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```
+ComponenteVehicular
+│
+├── Motor             -> encenderMotor()
+├── Transmision       -> cambiarMarcha(int)
+├── Neumatico         -> verificarPresion()
+├── Chasis            -> calcularCargaMaxima()
+└── SistemaFrenos     -> verificarABS()
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 📂 Estructura del Proyecto
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- `ComponenteVehicular.java`: Clase base con atributos comunes (`codigo`, `fabricante`) y método `mostrarInformacion()`.
+- `Motor.java`: Hereda de la clase base, agrega atributos `cilindros` y `potencia`, y el método `encenderMotor()`.
+- `Transmision.java`: Añade atributos `tipo` y `marchas`, y el método `cambiarMarcha(int)`.
+- `Neumatico.java`: Incorpora `tamaño` y `presion`, e implementa `verificarPresion()`.
+- `Chasis.java`: Tiene `tipo` y `peso`, con un método para `calcularCargaMaxima()`.
+- `SistemaFrenos.java`: Integra `tieneABS` y `tipoDiscos`, con la función `verificarABS()`.
+- `Main.java`: Clase principal que instancia cada componente y ejecuta sus métodos para mostrar su información y comportamiento.
 
-## Dependency Management
+## ✅ Comportamientos Especializados
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# project-java-herencia
+| Clase           | Método particular         | Funcionalidad                                                    |
+|----------------|---------------------------|------------------------------------------------------------------|
+| `Motor`        | `encenderMotor()`         | Imprime mensaje de encendido con potencia y cilindros           |
+| `Transmision`  | `cambiarMarcha(int)`      | Cambia la marcha validando el rango disponible                  |
+| `Neumatico`    | `verificarPresion()`      | Verifica si la presión está dentro del rango recomendado        |
+| `Chasis`       | `calcularCargaMaxima()`   | Calcula carga máxima estimada según peso del chasis             |
+| `SistemaFrenos`| `verificarABS()`          | Informa si el sistema ABS está operativo                        |
+
+## 💻 Captura de salida por consola
+
+![alt text](image.png)
+
+
+## 🛠️ Tecnologías
+
+- Lenguaje: Java
+- Entorno: Cualquier IDE compatible con Java (Eclipse, IntelliJ, VS Code)
+
+## 📌 Objetivo Educativo
+
+Aplicar los conceptos de **herencia**, **sobrescritura de métodos (`@Override`)**, y la **modularización de clases**, representando componentes reales de un vehículo.
